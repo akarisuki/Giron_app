@@ -11,6 +11,13 @@
 |
 */
 
+
+use App\Http\Controllers\AsyncController;
+
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('async/request', [AsyncController::class, 'request'])->name('async.request');
+Route::get('async/response/{id}', [AsyncController::class, 'response'])->name('async.response');
